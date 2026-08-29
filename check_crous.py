@@ -9,7 +9,7 @@ CHAT_ID = os.environ["CHAT_ID"]
 r = requests.get(URL, timeout=30, headers={"User-Agent": "Mozilla/5.0"})
 text = BeautifulSoup(r.text, "html.parser").get_text(" ", strip=True)
 
-if "Aucun logeent trouvé pour Lyon" not in text:
+if "Aucun logement trouvé pour Lyon" not in text:
     requests.post(
         f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
         data={"chat_id": CHAT_ID, "text": "Alerte CROUS Lyon : la page a changé, vérifie vite."},
