@@ -9,7 +9,7 @@ URL = "https://trouverunlogement.lescrous.fr/tools/47/search?occupationModes=alo
 BOT_TOKEN = os.environ["BOT_TOKEN"]
 CHAT_ID = os.environ["CHAT_ID"]
 
-ABSENCE_TEXT = "Aucun logeent trouvé en France"
+ABSENCE_TEXT = "Aucun logement trouvé en France"
 
 def fetch_text(url: str) -> str:
     r = requests.get(
