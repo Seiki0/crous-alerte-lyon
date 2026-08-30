@@ -3,6 +3,7 @@ import re
 import sys
 import requests
 from bs4 import BeautifulSoup
+from datetime import datetime, timezone
 
 URL = "https://trouverunlogement.lescrous.fr/tools/47/search?occupationModes=alone&bounds=4.782253280282021_45.805392737249164_4.9058494716882715_45.695192390203836"
 
@@ -40,6 +41,8 @@ def main():
     text = fetch_text(URL)
 
     print(text[:1500])
+
+    print("RUN OK", datetime.now(timezone.utc).isoformat())
 
     if ABSENCE_TEXT not in text:
         send_telegram(
