@@ -2,7 +2,7 @@ name: Crous alert
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "2,9,16,23,31,38,46,53 * * * *"
   workflow_dispatch:
 
 jobs:
